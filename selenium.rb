@@ -34,14 +34,14 @@ class BBCLogin
         @driver.find_element(:id, "username-input").clear
     end
 
-    def self.run
+    def self.run(username1_input, password1_input, username2_input, password2_input)
         self.get_website
         sleep(2)
         self.login_link
         sleep(2)
-        self.username_input("sfsdgdh")
+        self.username_input(username1_input)
         sleep(2)
-        self.password_input("safjashdfuahskdjfa")
+        self.password_input(password1_input)
         sleep(2)
         self.submit
         sleep(2)
@@ -49,13 +49,13 @@ class BBCLogin
         sleep(2)
         self.clear_username_input
         sleep(2)
-        self.username_input("bbc-jennyejohnson94@gmail.com")
+        self.username_input(username2_input)
         sleep(2)
-        self.password_input("password1234")
+        self.password_input(password2_input)
         sleep(2)
         self.submit
         sleep(10)
     end
 end
 
-BBCLogin.run
+BBCLogin.run("sfsdgdh", "safjashdfuahskdjfa", "bbc-jennyejohnson94@gmail.com", "password1234")
